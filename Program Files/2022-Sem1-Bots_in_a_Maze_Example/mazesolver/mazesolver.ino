@@ -106,7 +106,7 @@ void loop() {
 
   if (sonar.ping_cm() < 3) {
     if (confirm_dist >= STOP_THRESH_DIST) {
-      //wallahead();
+      wallahead();
       confirm_dist = 0;
       Serial.println("hit");
     }
@@ -182,29 +182,29 @@ void followLineUntilJunction() {
     
     
     if (reading == 0b011) {
-      //setMotors(45, 80);
-      setMotors(80, 30);
+      setMotors(45, 80);
+      //setMotors(80, 30);
       digitalWrite(LED[0], 1); //red
       digitalWrite(LED[1], 0); //green
       digitalWrite(LED[2], 0); //blue
     }
     else if (reading == 0b110) {  
-      //setMotors(80, 45);
-      setMotors(30, 80);
+      setMotors(80, 45);
+      //setMotors(30, 80);
       digitalWrite(LED[0], 0); //red
       digitalWrite(LED[1], 0); //green
       digitalWrite(LED[2], 1); //blue
     }
     else if (reading == 0b001) {
-      //setMotors(50, 75);
-      setMotors(100, 30);
+      setMotors(50, 75);
+      //setMotors(100, 30);
       digitalWrite(LED[0], 1); //red
       digitalWrite(LED[1], 1); //green
       digitalWrite(LED[2], 0); //blue
     }
     else if (reading == 0b100) {  
-      //setMotors(75, 30);
-      setMotors(30, 100);
+      setMotors(75, 30);
+      //setMotors(30, 100);
       digitalWrite(LED[0], 0); //red
       digitalWrite(LED[1], 1); //green
       digitalWrite(LED[2], 1); //blue
