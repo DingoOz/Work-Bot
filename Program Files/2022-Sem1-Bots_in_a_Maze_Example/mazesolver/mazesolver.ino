@@ -1,6 +1,16 @@
-#include <NewPing.h>
+/*
+ * QUT Robotics Work Bot
+ * Hardware is based on a Teensy 2.0, SR04, 3 IR sensors and 
+ * custom H-bridges driving two 6v geared DC motors.
+ */
 
-//Bunch of pins
+
+#include <NewPing.h>  //to drive the Ultrasonic SR04 sensor
+
+//
+***** Pin Defintions *****
+
+// RGB LED 
 #define RLED 23
 #define GLED 13
 #define BLED 22
@@ -9,17 +19,20 @@
 #define CIR A1
 #define RIR A2
 
+// Battery Voltage ADC
 #define VDIV A0
 
-//Motor pins
+//Motor H-Bridge
 #define LF 12
 #define LB 14
 #define RF 9
 #define RB 10
 
-//Ultrasonic pins
+//Ultrasonic Sensor SR04
 #define USTRIGGER 6
 #define USECHO 5
+//*************************
+
 
 #define STOP_THRESH 2
 #define STOP_THRESH_DIST 5
