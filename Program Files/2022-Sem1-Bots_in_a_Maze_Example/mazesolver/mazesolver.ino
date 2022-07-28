@@ -4,11 +4,11 @@
  * custom H-bridges driving two 6v geared DC motors.
  */
 
-
+#include "mazesolver.h"
 #include <NewPing.h>  //to drive the Ultrasonic SR04 sensor
 
-//
-***** Pin Defintions *****
+
+//***** Pin Defintions *****
 
 // RGB LED 
 #define RLED 23
@@ -33,7 +33,7 @@
 #define USECHO 5
 //*************************
 
-
+//define constants
 #define STOP_THRESH 2
 #define STOP_THRESH_DIST 5
 
@@ -48,7 +48,11 @@ int confirm_dist;
 uint8_t reading;
 unsigned long t;;
 
-//Sets up everything
+//*****************************************************************************
+// Function: setup()
+// Sets up everything, runs once
+//*****************************************************************************
+
 void setup() {
   //LEDS and IR
   for (int i = 0; i < 3; i++) {
@@ -67,40 +71,21 @@ void setup() {
   reading;
   t = millis();
 
+  //Confirm Battery has enough Voltage
+  if (!checkBatt()) {
+    //Battery was measured as not enough Voltage therefore blink LED Red 5 times, pause, blink 5 times then repeat.
+    while(true){ //never ending loop 
+      //ADD RED LED BLINK ROUTINE HERE
+      }
+    
+  }
+
 }
 
 //The uncommented code should just make the robot rock back and forth every 8 seconds
 void loop() {
-  /*
-  for (int i = 0; i < 200; i++) {
-    setMotors(i, i);
-    delay(10);
-  }
-  for (int i = 200; i > 0; i--) {
-    setMotors(i, i);
-    delay(10);
-  }
-  for (int i = 0; i < 200; i++) {
-    setMotors(-i, -i);
-    delay(10);
-  }
-  for (int i = 200; i > 0; i--) {
-    setMotors(-i, -i);
-    delay(10);
-  }
-
-  delay(1000);
-  
-  
-  for (int i = 0; i < 3; i++) {
-    digitalWrite(LED[(i-1>=0) ? i-1 : 2], 0);
-    digitalWrite(LED[i], 1);
-    //Serial.println(sonar.ping_cm());
-    //Serial.println(checkIR(IR[i]));
-    delay(1000);
-  }
-  */
-
+ 
+ 
   //Serial.println(sonar.ping_cm());
 
 
