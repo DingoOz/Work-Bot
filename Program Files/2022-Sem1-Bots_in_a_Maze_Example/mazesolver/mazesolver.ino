@@ -144,10 +144,14 @@ void setMotors(int left, int right) {
   }
 }
 
+//******************************************************************************************
+// Function: wallahead()
+// This function is called to react to the detection of an obstacle
+//******************************************************************************************
 void wallahead() {
-  setMotors(-50, 50);
-  delay(1500);
-}
+  setMotors(-50, 50);  //start spinning robot
+  delay(1500);  //wait for 1.5 seconds
+} //return to calling function.
 
 void followLineUntilJunction() {
   
