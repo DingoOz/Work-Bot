@@ -88,7 +88,7 @@ void setup() {
 
 }
 
-//The uncommented code should just make the robot rock back and forth every 8 seconds
+
 void loop() {
  
  
