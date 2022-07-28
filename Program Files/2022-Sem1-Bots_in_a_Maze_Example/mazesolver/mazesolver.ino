@@ -76,6 +76,12 @@ void setup() {
     //Battery was measured as not enough Voltage therefore blink LED Red 5 times, pause, blink 5 times then repeat.
     while(true){ //never ending loop 
       //ADD RED LED BLINK ROUTINE HERE
+      int i = 0;
+      for (i=1; i <=5; i++){
+        digitalWrite(LED[0], 1); //red on
+        delay(500);
+      }
+      delay(3000);
       }
     
   }
